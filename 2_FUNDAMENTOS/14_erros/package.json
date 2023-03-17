@@ -1,14 +1,15 @@
 {
-  "name": "10_abistracao_input",
+  "name": "14_erros",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "tarefa.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.0",
     "inquirer": "^8.1.0"
   }
 }
