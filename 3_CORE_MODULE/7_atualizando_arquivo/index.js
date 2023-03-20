@@ -15,7 +15,10 @@ const server = http.createServer((req, res) => {
       return res.end()
     })
   } else {
-    fs.writeFile('arquivo.txt', name, function (err, data) {
+    //quebra a linha tanto para linux como para windows
+    const nameNewLine = name + ','
+
+    fs.appendFile('arquivo.txt', nameNewLine, function (err, data) {
       res.writeHead(302, {Location: '/',})
       return res.end()
     })
