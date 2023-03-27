@@ -6,6 +6,22 @@ const path = require('path')
 
 const basePath = path.join(__dirname, 'templates')
 
+app.get('/users/add', (req, res) => {
+    res.sendFile(`${basePath}/userForm.html`)
+})
+
+app.post('/users/save', (req, res) => {
+// ler body
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+)
+
+app.use(express.json())
+
+})
+
 app.get('/users/:id', (req, res) => {
     const id = req.params.id
 
@@ -18,7 +34,6 @@ app.get('/', (req, res) => {
 
     res.sendFile(`${basePath}/index.html`)
 })
-
 
 
 app.listen(port, () => {
