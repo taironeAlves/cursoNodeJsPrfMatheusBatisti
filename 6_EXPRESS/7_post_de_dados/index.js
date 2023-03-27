@@ -14,22 +14,13 @@ app.get('/users/:id', (req, res) => {
     res.sendFile(`${basePath}/user.html`)
 })
 
-
-
 app.get('/', (req, res) => {
 
     res.sendFile(`${basePath}/index.html`)
 })
 
 
+
 app.listen(port, () => {
     console.log(`App rodando na porta ${port} `)
-})
-
-app.get('/users/add', (req, res) => {
-    res.sendFile(`${basePath}/userForm.html`)
-})
-
-app.post('/users/save', (req, res) => {
-
 })
