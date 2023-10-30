@@ -1,0 +1,9 @@
+npm install bcryptjs connect-flash cookie-parser cookie-session express express-flash express-session mysql2 sequelize nodemon session-file-store
+bcryptjs -> pacote facilita a criptografia de senhas, protege contra ataques de força bruta e injection, ele salga a todas as senhas.
+connect-flash -> transfere mensagens de requests para outras rotas. Utilizado junto com o Expressjs. Exemplo  rota /exp req('sucess') redirect /feito req('sucess'). Os tipos de mensagens aceitas são  "success", "error", "info", "warning".
+cookie-parser -> permite que você analise, configure e defina cookies de forma conveniente em suas rotas.
+cookie-session ->  O principal objetivo do cookie-session é fornecer um método simples de armazenar informações de sessão diretamente em cookies do navegador do cliente, em oposição a outras soluções de armazenamento, como bancos de dados ou memória.
+express-flash -> simplifica o processo de armazenamento e exibição de mensagens flash em aplicativos Express.js. Ele é frequentemente usado em conjunto com connect-flash, um middleware que lida com a lógica subjacente de armazenamento e recuperação de mensagens flash.
+mysql2 ->  Ele é uma alternativa popular ao driver mysql e oferece várias vantagens, incluindo maior desempenho e suporte a promessas e async/await, tornando o código mais limpo e fácil de ler.
+sequelize -> Ele oferece uma camada de abstração sobre o banco de dados, permitindo que você trabalhe com modelos de dados, consultas e migrações de forma mais simples e orientada a objetos.
+session-file-store -> Ele é uma alternativa ao armazenamento de sessão em memória (por padrão, as sessões são armazenadas em memória) e é útil quando você deseja persistir as sessões em arquivos em disco para evitar a perda de dados de sessão entre reinicializações do servidor.
