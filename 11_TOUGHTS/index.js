@@ -3,6 +3,8 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const fileStore = require('session-file-store')(session);
 const flash = require('express-flash');
+const toughtsRoutes = require('./routes/toughtsRoutes');
+const ToughtController = require('./controllers/ToughtController');
 
 const app = express();
 
@@ -10,6 +12,8 @@ const conn = require('./db/conn');
 
 // Models
 const Toughts = require('./models/Toughts');
+const User = require('./models/User');
+
 
 // template engine
 app.engine('handlebars', exphbs.engine());
@@ -61,6 +65,14 @@ app.use((req, res, next) => {
     next();
 })
 
-conn.sync().then(() => {
-    app.listen(3000)
-}).catch((err) => console.log(err))
+
+// Routes
+app.use('/toughts', toughtsRoutes);
+app.get('/', ToughtController.showToughts);
+
+conn
+    // .sync({ force: true })
+    .sync()
+    .then(() => {
+        app.listen(3000)
+    }).catch((err) => console.log(err))
